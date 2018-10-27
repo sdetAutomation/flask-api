@@ -1,0 +1,35 @@
+swagger: "2.0"
+info:
+  description: This is the swagger specs for this flask-api project
+  version: "1.0.0"
+  title: Flask Api
+consumes:
+  - application/json
+produces:
+  - application/json
+
+#basePath: /
+
+# Paths supported by this application
+paths:
+  /:
+    get:
+      operationId: app.welcome
+      tags:
+        - swagger
+      summary: Retrieves welcome message
+      description: Displays welcome message
+      responses:
+        200:
+          description: See a welcome message
+
+  /health:
+    get:
+      operationId: app.health
+      tags:
+        - swagger
+      summary: Retrieves health status of this application
+      description: Perform health check on flask api
+      responses:
+        200:
+          description: Application is functioning normally
