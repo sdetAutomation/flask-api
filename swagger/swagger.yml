@@ -12,11 +12,22 @@ produces:
 
 # Paths supported by this application
 paths:
+  /createdb:
+    get:
+      operationId: app.create_db
+      tags:
+      - db-helper
+      summary: Creates a database per config settings
+      description: Creates a database per config settings
+      responses:
+        200:
+          description: Creates a database per config settings
+
   /:
     get:
       operationId: app.welcome
       tags:
-        - swagger
+        - home
       summary: Retrieves welcome message
       description: Displays welcome message
       responses:
@@ -27,9 +38,47 @@ paths:
     get:
       operationId: app.health
       tags:
-        - swagger
+        - health
       summary: Retrieves health status of this application
       description: Perform health check on flask api
       responses:
         200:
           description: Application is functioning normally
+
+  /users/v1:
+    get:
+      operationId: app.get_users
+      tags:
+        - users
+      summary: Retrieves all users
+      description: Displays all users
+      responses:
+        200:
+          description: See all users
+
+  /users/v1/{username}:
+    get:
+      operationId: app.get_by_username
+      tags:
+        - users
+      summary: Retrieves user by username
+      description: Displays user by username
+      parameters:
+        - name: username
+          in: path
+          description: retrieve username data
+          type: string
+          required: true
+      responses:
+        200:
+          description: Successfully display user info
+          schema:
+            type: array
+            items:
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+        404:
+          description: User not found
