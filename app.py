@@ -5,6 +5,7 @@ from models.location_model import *
 
 
 def create_db():
+    db.drop_all()
     db.create_all()
     User.add_user_td()
     response_text = '{ "message": "Database created." }'
@@ -21,16 +22,6 @@ def welcome():
 def health():
     response_text = '{ "status": "OK" }'
     response = Response(response_text, 200, mimetype='application/json')
-    return response
-
-
-def get_users():
-    return_value = jsonify({'users': User.get_all_users()})
-    return return_value
-
-
-def get_by_username(username):
-    response = Response(str(User.get_user(username)), 200, mimetype="application/json")
     return response
 
 

@@ -47,7 +47,7 @@ paths:
 
   /users/v1:
     get:
-      operationId: app.get_users
+      operationId: api.users.get_users
       tags:
         - users
       summary: Retrieves all users
@@ -55,10 +55,33 @@ paths:
       responses:
         200:
           description: See all users
+    post:
+      operationId: api.users.add_user
+      tags:
+        - users
+      summary: Creates user
+      description: Creates a single user record
+      parameters:
+        - name: user
+          in: body
+          description: username to create
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              email:
+                type: string
+      responses:
+        200:
+          description: Sucessfully create user
+        400:
+          description: Invalid request
 
   /users/v1/{username}:
     get:
-      operationId: app.get_by_username
+      operationId: api.users.get_by_username
       tags:
         - users
       summary: Retrieves user by username
@@ -80,5 +103,52 @@ paths:
                   type: string
                 email:
                   type: string
+        404:
+          description: User not found
+
+    put:
+      operationId: api.users.update_email
+      tags:
+        - users
+      summary: Update user email
+      description: Update a single user email
+      parameters:
+        - name: username
+          in: path
+          description: username to update email
+          type: string
+          required: true
+        - name: user
+          in: body
+          description: field to update
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              email:
+                type: string
+      responses:
+        204:
+          description: Sucessfully updated user email
+        400:
+          description: Invalid request
+
+    delete:
+      operationId: api.users.delete_user
+      tags:
+        - users
+      summary: Deletes user by username
+      description: Deletes user by username
+      parameters:
+        - name: username
+          in: path
+          description: Delete username
+          type: string
+          required: true
+      responses:
+        204:
+          description: Sucessfully deleted user
         404:
           description: User not found
