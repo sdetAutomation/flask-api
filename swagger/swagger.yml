@@ -1,0 +1,152 @@
+swagger: "2.0"
+info:
+  description: This is the swagger specs for this flask-api project
+  version: "1.0.0"
+  title: Flask Api
+consumes:
+  - application/json
+produces:
+  - application/json
+
+#basePath: /
+
+# Paths supported by this application
+paths:
+  /createdb:
+    get:
+      operationId: app.create_db
+      tags:
+      - db-helper
+      summary: Creates a database per config settings
+      description: Creates a database per config settings
+      responses:
+        200:
+          description: Creates a database per config settings
+
+  /:
+    get:
+      operationId: app.welcome
+      tags:
+        - home
+      summary: Retrieves welcome message
+      description: Displays welcome message
+      responses:
+        200:
+          description: See a welcome message
+
+  /health:
+    get:
+      operationId: app.health
+      tags:
+        - health
+      summary: Retrieves health status of this application
+      description: Perform health check on flask api
+      responses:
+        200:
+          description: Application is functioning normally
+
+  /users/v1:
+    get:
+      operationId: api.users.get_users
+      tags:
+        - users
+      summary: Retrieves all users
+      description: Displays all users
+      responses:
+        200:
+          description: See all users
+    post:
+      operationId: api.users.add_user
+      tags:
+        - users
+      summary: Creates user
+      description: Creates a single user record
+      parameters:
+        - name: user
+          in: body
+          description: username to create
+          required: true
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              email:
+                type: string
+      responses:
+        200:
+          description: Sucessfully create user
+        400:
+          description: Invalid request
+
+  /users/v1/{username}:
+    get:
+      operationId: api.users.get_by_username
+      tags:
+        - users
+      summary: Retrieves user by username
+      description: Displays user by username
+      parameters:
+        - name: username
+          in: path
+          description: retrieve username data
+          type: string
+          required: true
+      responses:
+        200:
+          description: Successfully display user info
+          schema:
+            type: array
+            items:
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+        404:
+          description: User not found
+
+    put:
+      operationId: api.users.update_email
+      tags:
+        - users
+      summary: Update user email
+      description: Update a single user email
+      parameters:
+        - name: username
+          in: path
+          description: username to update email
+          type: string
+          required: true
+        - name: user
+          in: body
+          description: field to update
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+      responses:
+        204:
+          description: Sucessfully updated user email
+        400:
+          description: Invalid request
+
+    delete:
+      operationId: api.users.delete_user
+      tags:
+        - users
+      summary: Deletes user by username
+      description: Deletes user by username
+      parameters:
+        - name: username
+          in: path
+          description: Delete username
+          type: string
+          required: true
+      responses:
+        204:
+          description: Sucessfully deleted user
+        404:
+          description: User not found

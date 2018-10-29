@@ -4,4 +4,4 @@ python:
 install:
   - pip install pipenv
   - pipenv install
-script: pytest -v
+script: pytest
