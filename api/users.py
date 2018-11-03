@@ -3,7 +3,6 @@ import jsonschema
 from schemas.user_schema import *
 from flask import jsonify, Response, request, json
 from models.user_model import User
-from validations.validation import *
 from messages.error_messages import *
 
 
@@ -20,7 +19,7 @@ def get_by_username(username):
 def add_user():
     request_data = request.get_json()
     try:
-        jsonschema.validate(request_data, user_schema)
+        jsonschema.validate(request_data, add_user_schema)
         User.add_user(request_data['username'], request_data['email'])
         response = Response(json.dumps(request_data), 201, mimetype="application/json")
         response.headers['Location'] = "users/v1/" + str(request_data['username'])
@@ -31,12 +30,13 @@ def add_user():
 
 def update_email(username):
     request_data = request.get_json()
-    if validate_put_request_object(request_data):
+    try:
+        jsonschema.validate(request_data, update_email_schema)
         # username is coming from url param, and email from json request body
         User.update_email(username, request_data['email'])
         response = Response('', 204, mimetype="application/json")
-    else:
-        response = Response(json.dumps(invalid_put_error_msg_users), 400, mimetype="application/json")
+    except jsonschema.exceptions.ValidationError as exc:
+        response = Response(error_message_helper(exc.message), 400, mimetype="application/json")
     return response
 
 
