@@ -13,5 +13,9 @@ invalid_delete_error_msg_users = {
 }
 
 
+def error_message_helper(msg):
+    return '{ "error": "' + msg + '."}'
+
+
 class ErrorMessages:
     pass
