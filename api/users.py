@@ -1,3 +1,6 @@
+import jsonschema
+
+from schemas.user_schema import *
 from flask import jsonify, Response, request, json
 from models.user_model import User
 from validations.validation import *
@@ -16,13 +19,16 @@ def get_by_username(username):
 
 def add_user():
     request_data = request.get_json()
-    if validate_user_object(request_data):
-        User.add_user(request_data['username'], request_data['email'])
-        response = Response(json.dumps(request_data), 201, mimetype="application/json")
-        response.headers['Location'] = "users/v1/" + str(request_data['username'])
-    else:
-        response = Response(json.dumps(invalid_post_error_msg_users), 400, mimetype="application/json")
-    return response
+
+    jsonschema.validate(request_data, user_schema)
+
+    # if validate_user_object(request_data):
+    #     User.add_user(request_data['username'], request_data['email'])
+    #     response = Response(json.dumps(request_data), 201, mimetype="application/json")
+    #     response.headers['Location'] = "users/v1/" + str(request_data['username'])
+    # else:
+    #     response = Response(json.dumps(invalid_post_error_msg_users), 400, mimetype="application/json")
+    return 'ok'
 
 
 def update_email(username):
