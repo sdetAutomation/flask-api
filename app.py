@@ -8,6 +8,7 @@ def create_db():
     db.drop_all()
     db.create_all()
     User.add_user_td()
+    Location.add_location_td()
     response_text = '{ "message": "Database created." }'
     response = Response(response_text, 200, mimetype='application/json')
     return response

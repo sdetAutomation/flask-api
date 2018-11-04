@@ -42,19 +42,17 @@ From the root of this project enter the following terminal command:
 
 `pipenv run python app.py`
 
-
 Or you can also start the application using PyCharm.  
-
 
 
 Project Database
 -----
-This project uses local sqlite for a repository.  
+This project uses a local sqlite for a repository.  
 
 
 Swagger
 -----
-This project contains a swagger ui.  (For more information regarding swagger)[https://swagger.io/]
+This project contains a swagger ui.  [For more information regarding swagger. Click Here.](https://swagger.io/)
 
 To view this api's swagger ui, run this application, then navigate to [http://localhost:5000/ui/]
 
@@ -64,7 +62,9 @@ You can test out this api entirely from the swagger ui page.
 Rest Api 
 -----
 
-GET - getAll : localhost:5000/users/v1/
+####Users Api
+
+GET - getAll: http://localhost:5000/users/v1/
 
 GET - getByUsername: http://localhost:5000/users/v1/darth
 
@@ -72,11 +72,22 @@ PUT - updateUserEmail: http://localhost:5000/users/v1/darth + include a json bod
 
 DELETE - deleteUsername: http://localhost:5000/users/v1/darth
 
+####Locations Api
+
+GET - getAll: http://localhost:5000/locations/v1/
+
+GET - getByUsername: http://localhost:5000/locations/v1/ca
+
+PUT - updateUserEmail: http://localhost:5000/locations/v1/ca + include a json body with new capital.
+
+DELETE - deleteUsername: http://localhost:5000/locations/v1/ca
 
 
 TDD - Integration Tests
 -----
 This api is fully tested with Unit Tests and Integration tests.  Please see tests directory for examples.
+
+Tests connect to test.db for integration tests.
 
     
 Flask Project
