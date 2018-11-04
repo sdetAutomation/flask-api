@@ -47,7 +47,7 @@ Or you can also start the application using PyCharm.
 
 Project Database
 -----
-This project uses local sqlite for a repository.  
+This project uses a local sqlite for a repository.  
 
 
 Swagger

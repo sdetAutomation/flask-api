@@ -135,3 +135,22 @@ def test_tc0007_bad_put(client):
     if td_error_msg not in json_info:
         print("Error message not found: " + td_error_msg)
         assert False
+
+
+def test_tc0008_bad_delete(client):
+    td_state = 'ut'
+    td_error_msg = '{\'error\': \'Location not found, unable to delete.\'}'
+
+    response = client.delete('/locations/v1/' + td_state)
+
+    # assert proper status code returned
+    assert response.status_code == 404
+    json_info = helper(response.response)
+
+    print(json_info)
+    print(td_error_msg)
+
+    # assert email is not found on response json
+    if td_error_msg not in json_info:
+        print("Error message not found: " + td_error_msg)
+        assert False
