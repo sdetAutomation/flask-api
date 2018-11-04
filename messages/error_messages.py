@@ -12,6 +12,9 @@ invalid_delete_error_msg_users = {
     "error": "User not found, unable to delete."
 }
 
+invalid_delete_error_msg_locations = {
+    "error": "Location not found, unable to delete."
+}
 
 def error_message_helper(msg):
     return '{ "error": "' + msg + '."}'

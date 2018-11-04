@@ -23,7 +23,7 @@ class Location(db.Model):
 
     @staticmethod
     def add_location(_state, _capital):
-        new_location = Location(state=_state, _capital=_capital)
+        new_location = Location(state=_state, capital=_capital)
         db.session.add(new_location)
         db.session.commit()
 
@@ -38,6 +38,12 @@ class Location(db.Model):
         is_successful = Location.query.filter_by(state=_state).delete()
         db.session.commit()
         return bool(is_successful)
+
+    @staticmethod
+    def add_location_td():
+        Location.add_location("mn", "st paul")
+        Location.add_location("ca", "sacramento")
+        Location.add_location("ny", "albany")
 
     def __repr__(self):
         location_object = {

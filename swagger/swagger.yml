@@ -150,3 +150,109 @@ paths:
           description: Sucessfully deleted user
         404:
           description: User not found
+
+  /locations/v1:
+    get:
+      operationId: api.locations.get_locations
+      tags:
+        - locations
+      summary: Retrieves all locations
+      description: Displays all locations
+      responses:
+        200:
+          description: See all locations
+    post:
+      operationId: api.locations.add_location
+      tags:
+        - locations
+      summary: Creates location
+      description: Creates a single location record
+      parameters:
+        - name: location
+          in: body
+          description: location to create
+          required: true
+          schema:
+            type: object
+            properties:
+              state:
+                type: string
+              capital:
+                type: string
+      responses:
+        200:
+          description: Sucessfully create location
+        400:
+          description: Invalid request
+
+  /locations/v1/{state}:
+    get:
+      operationId: api.locations.get_by_state
+      tags:
+        - locations
+      summary: Retrieves location by state
+      description: Displays location by state
+      parameters:
+        - name: state
+          in: path
+          description: retrieve state data
+          type: string
+          required: true
+      responses:
+        200:
+          description: Successfully display state info
+          schema:
+            type: array
+            items:
+              properties:
+                state:
+                  type: string
+                capital:
+                  type: string
+        404:
+          description: State not found
+
+    put:
+      operationId: api.locations.update_capital
+      tags:
+        - locations
+      summary: Update location capital
+      description: Update a single location
+      parameters:
+        - name: state
+          in: path
+          description: state to update
+          type: string
+          required: true
+        - name: capital
+          in: body
+          description: field to update
+          required: true
+          schema:
+            type: object
+            properties:
+              capital:
+                type: string
+      responses:
+        204:
+          description: Sucessfully updated location capital
+        400:
+          description: Invalid request
+
+    delete:
+      operationId: api.locations.delete_location
+      tags:
+        - locations
+      summary: Deletes location by state
+      description: Deletes location by state
+      parameters:
+        - name: state
+          in: path
+          description: Delete state
+          type: string
+          required: true
+      responses:
+        204:
+          description: Sucessfully location
+        404:
+          description: Location not found
