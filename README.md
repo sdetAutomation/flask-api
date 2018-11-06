@@ -64,23 +64,23 @@ Rest Api
 
 ####Users Api
 
-GET - getAll: http://localhost:5000/users/v1/
+GET - getAll: [users/v1](http://localhost:5000/users/v1)
 
-GET - getByUsername: http://localhost:5000/users/v1/darth
+GET - getByUsername: [users/v1/darth](http://localhost:5000/users/v1/darth)
 
-PUT - updateUserEmail: http://localhost:5000/users/v1/darth + include a json body with new email.
+PUT - updateUserEmail: [users/v1/darth](http://localhost:5000/users/v1/darth) + include a json body with new email.
 
-DELETE - deleteUsername: http://localhost:5000/users/v1/darth
+DELETE - deleteUsername: [users/v1/darth](http://localhost:5000/users/v1/darth)
 
 ####Locations Api
 
-GET - getAll: http://localhost:5000/locations/v1/
+GET - getAll: [locations/v1](http://localhost:5000/locations/v1)
 
-GET - getByUsername: http://localhost:5000/locations/v1/ca
+GET - getByState: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
 
-PUT - updateUserEmail: http://localhost:5000/locations/v1/ca + include a json body with new capital.
+PUT - updateCapital: [locations/v1/ca](http://localhost:5000/locations/v1/ca) + include a json body with new capital.
 
-DELETE - deleteUsername: http://localhost:5000/locations/v1/ca
+DELETE - deleteLocation: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
 
 
 TDD - Integration Tests
@@ -92,8 +92,35 @@ Tests connect to test.db for integration tests.
     
 Flask Project
 -----
-This project is a Flask project. (For more information)[http://flask.pocoo.org/]
+This project is a Flask project. [For more information click here](http://flask.pocoo.org/)
     
+    
+Docker
+-----
+This application can be run in Docker.  Please see Dockerfile for image setup.  Steps to create an image & how to run 
+the app in a container list below. (must have docker installed)
+
+Create a docker image: `docker build -t flask-api .`
+
+Run docker container: `docker run -it p 5000:5000 flask-api`
+
+__*** Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/] ***__
+
+View docker images: `docker images`
+
+View docker containers: `docker ps -a`
+
+Remove docker images: `docker rmi $(docker images -q)`
+
+Remove docker containers: `docker rm $(docker ps -aq)`
+
+[Click here for more information regarding docker](https://docs.docker.com/)
+
+
+__* Note: this flask app by default runs as a development server, not meant for production. Docker & gunicorn 
+is used to productionize this app.  This docker container runs as as a production WSGI server, with 4 workers 
+via [gunicorn](https://gunicorn.org/). *__
+
    
 Continuous Integration(CI)
 ------------

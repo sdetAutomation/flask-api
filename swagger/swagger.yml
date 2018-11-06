@@ -14,7 +14,7 @@ produces:
 paths:
   /createdb:
     get:
-      operationId: app.create_db
+      operationId: api.main.create_db
       tags:
       - db-helper
       summary: Creates a database per config settings
@@ -25,7 +25,7 @@ paths:
 
   /:
     get:
-      operationId: app.welcome
+      operationId: api.main.welcome
       tags:
         - home
       summary: Retrieves welcome message
@@ -36,7 +36,7 @@ paths:
 
   /health:
     get:
-      operationId: app.health
+      operationId: api.main.health
       tags:
         - health
       summary: Retrieves health status of this application
