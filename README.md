@@ -64,23 +64,23 @@ Rest Api
 
 ####Users Api
 
-GET - getAll: http://localhost:5000/users/v1/
+GET - getAll: [users/v1](http://localhost:5000/users/v1)
 
-GET - getByUsername: http://localhost:5000/users/v1/darth
+GET - getByUsername: [users/v1/darth](http://localhost:5000/users/v1/darth)
 
-PUT - updateUserEmail: http://localhost:5000/users/v1/darth + include a json body with new email.
+PUT - updateUserEmail: [users/v1/darth](http://localhost:5000/users/v1/darth) + include a json body with new email.
 
-DELETE - deleteUsername: http://localhost:5000/users/v1/darth
+DELETE - deleteUsername: [users/v1/darth](http://localhost:5000/users/v1/darth)
 
 ####Locations Api
 
-GET - getAll: http://localhost:5000/locations/v1/
+GET - getAll: [locations/v1](http://localhost:5000/locations/v1)
 
-GET - getByUsername: http://localhost:5000/locations/v1/ca
+GET - getByState: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
 
-PUT - updateUserEmail: http://localhost:5000/locations/v1/ca + include a json body with new capital.
+PUT - updateCapital: [locations/v1/ca](http://localhost:5000/locations/v1/ca) + include a json body with new capital.
 
-DELETE - deleteUsername: http://localhost:5000/locations/v1/ca
+DELETE - deleteLocation: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
 
 
 TDD - Integration Tests
