@@ -106,6 +106,10 @@ Run docker container: `docker run -it p 5000:5000 flask-api`
 
 __***Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/]***__
 
+View docker images: `docker images`
+
+View docker containers: `docker ps -a`
+
 Remove docker images: `docker rmi $(docker images -q)`
 
 Remove docker containers: `docker rm $(docker ps -aq)`
