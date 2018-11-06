@@ -104,7 +104,7 @@ Create a docker image: `docker build -t flask-api .`
 
 Run docker container: `docker run -it p 5000:5000 flask-api`
 
-__***Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/]***__
+__*** Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/] ***__
 
 View docker images: `docker images`
 
@@ -115,6 +115,11 @@ Remove docker images: `docker rmi $(docker images -q)`
 Remove docker containers: `docker rm $(docker ps -aq)`
 
 [Click here for more information regarding docker](https://docs.docker.com/)
+
+
+__* Note: this flask app by default runs as a development server, not meant for production. Docker & gunicorn 
+is used to productionize this app.  This docker container runs as as a production WSGI server, with 4 workers 
+via [gunicorn](https://gunicorn.org/). *__
 
    
 Continuous Integration(CI)
