@@ -92,8 +92,26 @@ Tests connect to test.db for integration tests.
     
 Flask Project
 -----
-This project is a Flask project. (For more information)[http://flask.pocoo.org/]
+This project is a Flask project. [For more information click here](http://flask.pocoo.org/)
     
+    
+Docker
+-----
+This application can be run in Docker.  Please see Dockerfile for image setup.  Steps to create an image & how to run 
+the app in a container list below. (must have docker installed)
+
+Create a docker image: `docker build -t flask-api .`
+
+Run docker container: `docker run -it p 5000:5000 flask-api`
+
+__***Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/]***__
+
+Remove docker images: `docker rmi $(docker images -q)`
+
+Remove docker containers: `docker rm $(docker ps -aq)`
+
+[Click here for more information regarding docker](https://docs.docker.com/)
+
    
 Continuous Integration(CI)
 ------------
