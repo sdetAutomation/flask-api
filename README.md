@@ -52,7 +52,11 @@ This project uses a local sqlite for a repository.
 
 Swagger
 -----
-This project contains a swagger ui.  [For more information regarding swagger. Click Here.](https://swagger.io/)
+This project contains a swagger ui.  
+
+[For more information regarding swagger. Click here.](https://swagger.io/)
+
+[For more information regarding connexion. Click here.](https://connexion.readthedocs.io/en/latest/)
 
 To view this api's swagger ui, run this application, then navigate to [http://localhost:5000/ui/]
 
