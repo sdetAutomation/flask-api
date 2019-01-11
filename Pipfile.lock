@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7e07068bd150560dab2ae653aca4805f55816f368394fd0b9d6d78c777e6f232"
+            "sha256": "a9a960f93b69cd97af0010b95db2d378d8aa31ffdd1c5e2f78683cbf9efe4e5a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -226,11 +226,11 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:3e65a22eb0d4f1bdbc1eacccf4a3198bf8d4049dea5112d70a0c61b00e748d02",
-                "sha256:5924060b374f62608a078494b909d341720a050b5224ff87e17e12377486a71d"
+                "sha256:3f193df1cfe1d1609d4c583838bea3d532b18d6160fd3f55c9447fdca30848ec",
+                "sha256:e246cf173c01169b9617fc07264b7b1316e78d7a650055235d6d897bc80d9660"
             ],
             "index": "pypi",
-            "version": "==4.1.0"
+            "version": "==3.10.1"
         },
         "pyyaml": {
             "hashes": [
@@ -264,10 +264,10 @@
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:809547455d012734b4252081db1e6b4fc731de2299f3755708c39863625e1c77"
+                "sha256:6af3ca2f7f00844465ab4fa78337d487b39e53f516c51328aed4ed3a719d4264"
             ],
             "index": "pypi",
-            "version": "==1.2.15"
+            "version": "==1.2.16"
         },
         "swagger-ui-bundle": {
             "hashes": [

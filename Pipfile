@@ -6,13 +6,13 @@ name = "pypi"
 [packages]
 flask = "*"
 connexion = "*"
-pytest = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
 psycopg2 = "*"
 gunicorn = "*"
 jsonschema = "*"
 swagger-ui-bundle = "*"
+pytest = "<=4.*"
 
 [dev-packages]
 
