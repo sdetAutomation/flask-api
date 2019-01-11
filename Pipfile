@@ -12,6 +12,7 @@ flask-sqlalchemy = "*"
 psycopg2 = "*"
 gunicorn = "*"
 jsonschema = "*"
+swagger-ui-bundle = "*"
 
 [dev-packages]
 
