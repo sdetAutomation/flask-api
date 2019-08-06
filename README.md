@@ -106,7 +106,7 @@ the app in a container list below. (must have docker installed)
 
 Create a docker image: `docker build -t flask-api .`
 
-Run docker container: `docker run -it p 5000:5000 flask-api`
+Run docker container: `docker run -it -p 5000:5000 flask-api`
 
 __*** Once app has started, view the swagger ui by navigating to [http://localhost:5000/ui/] ***__
 
