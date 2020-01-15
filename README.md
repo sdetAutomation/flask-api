@@ -9,6 +9,7 @@
 # flask-api
 sample project building an api using flask and python
 
+[![Build Status](https://travis-ci.org/sdetAutomation/flask-api.svg?branch=master)](https://travis-ci.org/sdetAutomation/flask-api)
 
 Introduction
 ------------
