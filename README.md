@@ -11,6 +11,8 @@ sample project building an api using flask and python
 
 [![Build Status](https://travis-ci.org/sdetAutomation/flask-api.svg?branch=master)](https://travis-ci.org/sdetAutomation/flask-api)
 
+![](https://github.com/sdetautomation/flask-api/workflows/flask-api/badge.svg)
+
 Introduction
 ------------
 This project is made for anyone who is looking for an example of how to create a rest endpoint using Python and Flask.
