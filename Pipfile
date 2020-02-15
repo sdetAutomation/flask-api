@@ -13,6 +13,7 @@ gunicorn = "*"
 jsonschema = "*"
 swagger-ui-bundle = "*"
 pytest = "<=4.*"
+pipenv-to-requirements = "*"
 
 [dev-packages]
 
