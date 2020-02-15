@@ -63,11 +63,13 @@ To view this api's swagger ui, run this application, then navigate to [http://lo
 
 You can test out this api entirely from the swagger ui page. 
 
+This app is also deployed using [heroku](https://www.heroku.com/).  To view deployed api swagger navigate to [https://sdet-flask-api.herokuapp.com/ui/]
+
 
 Rest Api 
 -----
 
-####Users Api
+#### Users Api
 
 GET - getAll: [users/v1](http://localhost:5000/users/v1)
 
@@ -77,7 +79,18 @@ PUT - updateUserEmail: [users/v1/darth](http://localhost:5000/users/v1/darth) + 
 
 DELETE - deleteUsername: [users/v1/darth](http://localhost:5000/users/v1/darth)
 
-####Locations Api
+#### Users Api - deployed on heroku
+
+GET - getAll: [users/v1](https://sdet-flask-api.herokuapp.com/users/v1)
+
+GET - getByUsername: [users/v1/darth](https://sdet-flask-api.herokuapp.com/users/v1/darth)
+
+PUT - updateUserEmail: [users/v1/darth](https://sdet-flask-api.herokuapp.comusers/v1/darth) + include a json body with new email.
+
+DELETE - deleteUsername: [users/v1/darth](https://sdet-flask-api.herokuapp.com/users/v1/darth)
+
+
+#### Locations Api
 
 GET - getAll: [locations/v1](http://localhost:5000/locations/v1)
 
@@ -86,6 +99,16 @@ GET - getByState: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
 PUT - updateCapital: [locations/v1/ca](http://localhost:5000/locations/v1/ca) + include a json body with new capital.
 
 DELETE - deleteLocation: [locations/v1/ca](http://localhost:5000/locations/v1/ca)
+
+#### Locations Api - deployed on heroku
+
+GET - getAll: [locations/v1](https://sdet-flask-api.herokuapp.com/locations/v1)
+
+GET - getByState: [locations/v1/ca](https://sdet-flask-api.herokuapp.com/locations/v1/ca)
+
+PUT - updateCapital: [locations/v1/ca](https://sdet-flask-api.herokuapp.com/locations/v1/ca) + include a json body with new capital.
+
+DELETE - deleteLocation: [locations/v1/ca](https://sdet-flask-api.herokuapp.com/locations/v1/ca)
 
 
 TDD - Integration Tests
