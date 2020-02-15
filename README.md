@@ -130,6 +130,8 @@ via [gunicorn](https://gunicorn.org/). *__
 Continuous Integration(CI)
 ------------
 A web hook has been setup with Travis CI for all Push and Pull Requests.
+
+A web hook has also been setup with Github Actions for all Push and Pull Requests.
  
 
 Questions / Contact / Contribute
