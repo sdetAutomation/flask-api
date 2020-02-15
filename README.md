@@ -11,7 +11,7 @@ sample project building an api using flask and python
 
 [![Build Status](https://travis-ci.org/sdetAutomation/flask-api.svg?branch=master)](https://travis-ci.org/sdetAutomation/flask-api)
 
-[![Build Status](https://github.com/sdetautomation/flask-api/workflows/flask-api/badge.svg)](https://github.com/sdetAutomation/flask-api/actions?query=workflow%3Aflask-api)
+[![Build Status](https://github.com/sdetautomation/flask-api/workflows/flask-api/badge.svg)](https://github.com/sdetAutomation/flask-api/actions)
 
 Introduction
 ------------
