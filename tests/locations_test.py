@@ -28,7 +28,7 @@ def helper(json_info):
         return str(json.loads(first_row))
 
 
-def test_tc0001_get(client):
+def test_locations_tc0001_get(client):
     td_state = 'mn'
     response = client.get('/locations/v1')
     # using helper to format response json for assert
@@ -41,7 +41,7 @@ def test_tc0001_get(client):
         assert False
 
 
-def test_tc0002_get_by_location(client):
+def test_locations_tc0002_get_by_location(client):
     td_location = 'ca'
     response = client.get('/locations/v1/' + td_location)
     # using helper to format response json for assert
@@ -54,7 +54,7 @@ def test_tc0002_get_by_location(client):
         assert False
 
 
-def test_tc0003_post(client):
+def test_locations_tc0003_post(client):
     td_state = 'wi'
     td_capital = 'madison'
 
@@ -70,7 +70,7 @@ def test_tc0003_post(client):
         assert False
 
 
-def test_tc0004_put(client):
+def test_locations_tc0004_put(client):
     td_state = 'ny'
     td_capital = 'new capital for new york'
 
@@ -88,7 +88,7 @@ def test_tc0004_put(client):
         assert False
 
 
-def test_tc0005_delete(client):
+def test_locations_tc0005_delete(client):
     td_state = 'delete'
     td_capital = 'delete_capital'
     # creating record for delete
@@ -101,7 +101,7 @@ def test_tc0005_delete(client):
     assert response.status_code == 204
 
 
-def test_tc0006_bad_post(client):
+def test_locations_tc0006_bad_post(client):
     td_state = 'wi'
     td_capital = 'madison'
     td_error_msg = '{\'error\': "\'state\' is a required property."}'
@@ -120,7 +120,7 @@ def test_tc0006_bad_post(client):
         assert False
 
 
-def test_tc0007_bad_put(client):
+def test_locations_tc0007_bad_put(client):
     td_state = 'wi'
     td_capital = 'madison'
     td_error_msg = '{\'error\': "\'capital\' is a required property."}'
@@ -137,7 +137,7 @@ def test_tc0007_bad_put(client):
         assert False
 
 
-def test_tc0008_bad_delete(client):
+def test_locations_tc0008_bad_delete(client):
     td_state = 'ut'
     td_error_msg = '{\'error\': \'Location not found, unable to delete.\'}'
 

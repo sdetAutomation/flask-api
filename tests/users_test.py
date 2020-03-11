@@ -28,7 +28,7 @@ def helper(json_info):
         return str(json.loads(first_row))
 
 
-def test_tc0001_get(client):
+def test_users_tc0001_get(client):
     td_user = 'thor'
     response = client.get('/users/v1')
     # using helper to format response json for assert
@@ -41,7 +41,7 @@ def test_tc0001_get(client):
         assert False
 
 
-def test_tc0002_get_by_username(client):
+def test_users_tc0002_get_by_username(client):
     td_username = 'superman'
     response = client.get('/users/v1/' + td_username)
     # using helper to format response json for assert
@@ -54,7 +54,7 @@ def test_tc0002_get_by_username(client):
         assert False
 
 
-def test_tc0003_post(client):
+def test_users_tc0003_post(client):
     td_username = 'batman'
     td_email = 'batman@gmail.com'
 
@@ -70,7 +70,7 @@ def test_tc0003_post(client):
         assert False
 
 
-def test_tc0004_put(client):
+def test_users_tc0004_put(client):
     td_username = 'darth'
     td_email = 'luke@gmail.com'
 
@@ -88,7 +88,7 @@ def test_tc0004_put(client):
         assert False
 
 
-def test_tc0005_delete(client):
+def test_users_tc0005_delete(client):
     td_username = 'delete'
     td_email = 'delete@gmail.com'
     # creating record for delete
@@ -101,7 +101,7 @@ def test_tc0005_delete(client):
     assert response.status_code == 204
 
 
-def test_tc0006_bad_post(client):
+def test_users_tc0006_bad_post(client):
     td_username = 'et'
     td_email = 'et@gmail.com'
     td_error_msg = '{\'error\': "\'username\' is a required property."}'
@@ -120,7 +120,7 @@ def test_tc0006_bad_post(client):
         assert False
 
 
-def test_tc0007_bad_put(client):
+def test_users_tc0007_bad_put(client):
     td_username = 'darth'
     td_email = 'luke@gmail.com'
     td_error_msg = '{\'error\': "\'email\' is a required property."}'
@@ -137,7 +137,7 @@ def test_tc0007_bad_put(client):
         assert False
 
 
-def test_tc0008_bad_delete(client):
+def test_users_tc0008_bad_delete(client):
     td_username = 'loki'
     td_error_msg = '{\'error\': \'User not found, unable to delete.\'}'
 
