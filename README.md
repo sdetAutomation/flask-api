@@ -159,6 +159,13 @@ A web hook has been setup with Travis CI for all Push and Pull Requests.
 A web hook has also been setup with Github Actions for all Push and Pull Requests.
  
 
+Continuous Deployment(CD)
+------------
+This app is setup to deploy via [heroku](https://www.heroku.com/) after a successful CI.  
+
+To view deployed api swagger [click here](https://sdet-flask-api.herokuapp.com/ui/)
+
+
 Questions / Contact / Contribute
 ------------
 Feel free to fork this repo, add to it, and create a pull request if you like to contribute.  
