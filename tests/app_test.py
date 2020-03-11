@@ -21,7 +21,7 @@ def helper(json_info):
         return str(json.loads(first_row))
 
 
-def test_tc0001_welcome(client):
+def test_app_tc0001_welcome(client):
     td_message = 'welcome to sdetAutomation flask-api'
     response = client.get('/')
     json_info = helper(response.response)
@@ -33,7 +33,7 @@ def test_tc0001_welcome(client):
         assert False
 
 
-def test_tc0002_health(client):
+def test_app_tc0002_health(client):
     td_message = 'OK'
     response = client.get('/health')
     json_info = helper(response.response)
